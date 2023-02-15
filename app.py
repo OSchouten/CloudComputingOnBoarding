@@ -38,3 +38,8 @@ def submit_form():
         return redirect('/thankyou.html')
     else:
         return 'Something went wrong!'
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('index.html'), 404
